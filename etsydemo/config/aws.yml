@@ -1,7 +1,3 @@
-development:
-  access_key_id: AKIAIXDPAI6CF4OOACAQ
-  secret_access_key: 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
-
 test:
   access_key_id: AKIAIXDPAI6CF4OOACAQ
   secret_access_key: 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

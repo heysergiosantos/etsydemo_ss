@@ -2418,3 +2418,633 @@ Processing by ListingsController#index as HTML
   Rendered layouts/_header.html.erb (0.5ms)
   Rendered layouts/_footer.html.erb (4.2ms)
 Completed 200 OK in 639ms (Views: 624.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:43:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.2ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (474.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 669ms (Views: 659.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/custom.self-cb94914627105539f58783137397c8e304430a073ae4bfa2d2dabaf6a4dbc82b.css?body=1" for ::1 at 2016-04-29 11:43:53 +0100
+
+
+Started GET "/assets/missing-bc055e63df1681b66c19f08e182f0e551304ba3e6e6951bb9d96ee037e42a1b0.jpg" for ::1 at 2016-04-29 11:43:53 +0100
+
+
+Started GET "/listings/new" for ::1 at 2016-04-29 11:44:19 +0100
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (20.1ms)
+  Rendered listings/new.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 86ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listings" for ::1 at 2016-04-29 11:44:21 +0100
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SrXeBQGubGXyjDSUpxMbuoHoYirC8x10F7VsdJb9nbK/kdLNC0W8uUvo5bTAFsEE6wqHzdO2/PgW1ZFoSFAraw==", "listing"=>{"name"=>"a", "description"=>"", "price"=>""}, "commit"=>"Create Listing"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "listings" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "a"], ["description", ""], ["created_at", "2016-04-29 10:44:21.295938"], ["updated_at", "2016-04-29 10:44:21.295938"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/listings/12
+Completed 302 Found in 12ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/listings/12" for ::1 at 2016-04-29 11:44:21 +0100
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mListing Load (0.2ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered listings/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 72.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listings/12/edit" for ::1 at 2016-04-29 11:44:23 +0100
+Processing by ListingsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered listings/_form.html.erb (2.1ms)
+  Rendered listings/edit.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/listings/12" for ::1 at 2016-04-29 11:44:28 +0100
+Processing by ListingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SqAe90eG2szfwAJVH7zypQRMSVj4g9MtzjgyjW472+K/hBI/TW0KEGak03V4uSgbbq6sv+nGMqHPWM+RsJZtOw==", "listing"=>{"name"=>"a", "description"=>"", "price"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ffd6d7a6a30 @tempfile=#<Tempfile:/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/RackMultipart20160429-61259-1u42eiy.jpeg>, @original_filename="apple.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"listing[image]\"; filename=\"apple.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Listing", "id"=>"12"}
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-1e4j5k3.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]' -auto-orient -resize "200x200" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/cf46fc0951e96768063ca2189830eebd20160429-61259-137isjp'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-182ta3e.jpeg[0]' -auto-orient -resize "100x100" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/cf46fc0951e96768063ca2189830eebd20160429-61259-i675ts'
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61259-1rnn1jt.jpeg'
+  [1m[35mSQL (0.6ms)[0m  UPDATE "listings" SET "image_file_name" = ?, "image_content_type" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "listings"."id" = ?  [["image_file_name", "apple.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4272], ["image_updated_at", "2016-04-29 10:44:28.443510"], ["updated_at", "2016-04-29 10:44:28.624020"], ["id", 12]]
+[paperclip] saving /listings/images/000/000/012/original/apple.jpeg
+[paperclip] saving /listings/images/000/000/012/medium/apple.jpeg
+[paperclip] saving /listings/images/000/000/012/thumb/apple.jpeg
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/listings/12
+Completed 302 Found in 750ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/listings/12" for ::1 at 2016-04-29 11:44:29 +0100
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered listings/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:44:30 +0100
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 74.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:44:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (291.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 469ms (Views: 458.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:47:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.2ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (324.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 480ms (Views: 469.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/listings/5" for ::1 at 2016-04-29 11:47:41 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NNEcLtT2OPbUXDJXp06NGsliVxqXs13xwjZay58ZPdfB9RDm3h3oKm0443fAS1eko4Cy/Yb2vH3DVqfXQbSLDg==", "id"=>"5"}
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 1121ms (ActiveRecord: 0.3ms)
+
+AWS::Errors::MissingCredentialsError (
+Missing Credentials.
+
+Unable to find AWS credentials.  You can configure your AWS credentials
+a few different ways:
+
+* Call AWS.config with :access_key_id and :secret_access_key
+
+* Export AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to ENV
+
+* On EC2 you can run instances with an IAM instance profile and credentials
+  will be auto loaded from the instance metadata service on those
+  instances.
+
+* Call AWS.config with :credential_provider.  A credential provider should
+  either include AWS::Core::CredentialProviders::Provider or respond to
+  the same public methods.
+
+= Ruby on Rails
+
+In a Ruby on Rails application you may also specify your credentials in
+the following ways:
+
+* Via a config initializer script using any of the methods mentioned above
+  (e.g. RAILS_ROOT/config/initializers/aws-sdk.rb).
+
+* Via a yaml configuration file located at RAILS_ROOT/config/aws.yml.
+  This file should be formated like the default RAILS_ROOT/config/database.yml
+  file.
+
+):
+  app/controllers/listings_controller.rb:57:in `destroy'
+
+
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.5ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.6ms)
+
+
+Started GET "/listings/new" for ::1 at 2016-04-29 11:48:12 +0100
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (10.7ms)
+  Rendered listings/new.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listings" for ::1 at 2016-04-29 11:48:16 +0100
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6YKcj5tuYihg7E+shzinUuQ13zWPYZwGbY5CHZgPcygcppBHkYWy9NmInozgPX3sjtc60p4kfYps7r8BRqLF8Q==", "listing"=>{"name"=>"a", "description"=>"", "price"=>""}, "commit"=>"Create Listing"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "listings" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["description", ""], ["created_at", "2016-04-29 10:48:16.127481"], ["updated_at", "2016-04-29 10:48:16.127481"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/listings/13
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/listings/13" for ::1 at 2016-04-29 11:48:16 +0100
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered listings/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:48:18 +0100
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.1ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/listings/new" for ::1 at 2016-04-29 11:48:22 +0100
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (1.7ms)
+  Rendered listings/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listings" for ::1 at 2016-04-29 11:48:27 +0100
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/LaRmy8ZdMTefOp9SpPEjI4R5IL0TqwnuU3zc8Pn1XUJkp1TJfKkGGcYO10tlh4y5PMBZeULTau4LQ5vHUpjrA==", "listing"=>{"name"=>"1", "description"=>"", "price"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ffe9e1ffeb0 @tempfile=#<Tempfile:/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/RackMultipart20160429-61307-r4xp01.jpeg>, @original_filename="apple.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"listing[image]\"; filename=\"apple.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Listing"}
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-3y8x47.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]' -auto-orient -resize "200x200" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/f6a6d2746180c123351d603a4eee91d420160429-61307-1ac7mku'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-kw69jx.jpeg[0]' -auto-orient -resize "100x100" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/f6a6d2746180c123351d603a4eee91d420160429-61307-1nsjpfk'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61307-l5tk6e.jpeg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "listings" ("name", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["name", "1"], ["description", ""], ["image_file_name", "apple.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4272], ["image_updated_at", "2016-04-29 10:48:27.840565"], ["created_at", "2016-04-29 10:48:27.946130"], ["updated_at", "2016-04-29 10:48:27.946130"]]
+[paperclip] saving /listings/images/000/000/014/original/apple.jpeg
+  [1m[36m (7.8ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 1129ms (ActiveRecord: 8.4ms)
+
+AWS::Errors::MissingCredentialsError (
+Missing Credentials.
+
+Unable to find AWS credentials.  You can configure your AWS credentials
+a few different ways:
+
+* Call AWS.config with :access_key_id and :secret_access_key
+
+* Export AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to ENV
+
+* On EC2 you can run instances with an IAM instance profile and credentials
+  will be auto loaded from the instance metadata service on those
+  instances.
+
+* Call AWS.config with :credential_provider.  A credential provider should
+  either include AWS::Core::CredentialProviders::Provider or respond to
+  the same public methods.
+
+= Ruby on Rails
+
+In a Ruby on Rails application you may also specify your credentials in
+the following ways:
+
+* Via a config initializer script using any of the methods mentioned above
+  (e.g. RAILS_ROOT/config/initializers/aws-sdk.rb).
+
+* Via a yaml configuration file located at RAILS_ROOT/config/aws.yml.
+  This file should be formated like the default RAILS_ROOT/config/database.yml
+  file.
+
+):
+  app/controllers/listings_controller.rb:30:in `block in create'
+  app/controllers/listings_controller.rb:29:in `create'
+
+
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (81.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:58:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (318.8ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 506ms (Views: 496.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:58:44 +0100
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/listings/images/000/000/012/thumb/apple.jpeg?1461926668" for ::1 at 2016-04-29 11:58:44 +0100
+
+ActionController::RoutingError (No route matches [GET] "/system/listings/images/000/000/012/thumb/apple.jpeg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.9ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.1ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.5ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.4ms)
+
+
+Started DELETE "/listings/5" for ::1 at 2016-04-29 11:58:51 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J+ghMLmk9wSBvLDzYaLKVpdlo/d2/bns2fSXpD7i5YHSzC34s08n2DjYYdMGpxDo/YdGEGe4WGDYlGq44E9TWA==", "id"=>"5"}
+  [1m[35mListing Load (0.2ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "listings" WHERE "listings"."id" = ?  [["id", 5]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/sergiosantos/Git-Repos/etsydemo_ss/etsydemo/public/system/listings/images/000/000/005/original/apple.jpeg
+[paperclip] deleting /Users/sergiosantos/Git-Repos/etsydemo_ss/etsydemo/public/system/listings/images/000/000/005/medium/apple.jpeg
+[paperclip] deleting /Users/sergiosantos/Git-Repos/etsydemo_ss/etsydemo/public/system/listings/images/000/000/005/thumb/apple.jpeg
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 30ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/listings" for ::1 at 2016-04-29 11:58:51 +0100
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/listings/images/000/000/012/thumb/apple.jpeg?1461926668" for ::1 at 2016-04-29 11:58:51 +0100
+
+ActionController::RoutingError (No route matches [GET] "/system/listings/images/000/000/012/thumb/apple.jpeg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.9ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.2ms)
+
+
+Started DELETE "/listings/10" for ::1 at 2016-04-29 11:58:56 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FhvkV1VC6Bvq+Tg28dHw4I7QIl9lwsrpEpfmhsKe22XjP+ifX6k4x1Od6RaW1Cpe5DLHuHSHK2UT9xuaHDNtvA==", "id"=>"10"}
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 10]]
+  [1m[35m (8.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 12ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/listings" for ::1 at 2016-04-29 11:58:56 +0100
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/system/listings/images/000/000/012/thumb/apple.jpeg?1461926668" for ::1 at 2016-04-29 11:58:57 +0100
+
+ActionController::RoutingError (No route matches [GET] "/system/listings/images/000/000/012/thumb/apple.jpeg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.0ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.2ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/sergiosantos/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.2ms)
+
+
+Started DELETE "/listings/12" for ::1 at 2016-04-29 11:59:01 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UIigPEk6FO3ZcuxaHrPEEIfmZzrDf7HweHuDgfMcKBalrKz0Q9HEMWAWPXp5th6u7QSC3dI6UHx5G36dLbGezw==", "id"=>"12"}
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "listings" WHERE "listings"."id" = ?  [["id", 12]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 12ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/listings" for ::1 at 2016-04-29 11:59:01 +0100
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.1ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/listings/13" for ::1 at 2016-04-29 11:59:04 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dRBJwW2liioUHGAt52d+wYDR+JzXeer3HuG9izwG+3mANEUJZ05a9q14sQ2AYqR/6jMde8Y8C3sfgUCX4qtNoA==", "id"=>"13"}
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "listings" WHERE "listings"."id" = ?[0m  [["id", 13]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 11ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/listings" for ::1 at 2016-04-29 11:59:04 +0100
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/listings/new" for ::1 at 2016-04-29 11:59:06 +0100
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (5.8ms)
+  Rendered listings/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 63ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listings" for ::1 at 2016-04-29 11:59:17 +0100
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T+dqSKTgYEqzkPIdAEonhiwHQGDo+ed+Bi9itB+eY9i6w2aArguwlgr0Iz1nT/04RuWlh/m8BvIHT5+owTPVAQ==", "listing"=>{"name"=>"red apple", "description"=>"", "price"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe9d37294e8 @tempfile=#<Tempfile:/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/RackMultipart20160429-61362-j9r6qx.jpeg>, @original_filename="apple.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"listing[image]\"; filename=\"apple.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Listing"}
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-i53a88.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]' -auto-orient -resize "200x200" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/9ce459d8518efe50afb30f0dfad9515a20160429-61362-1q3mtoh'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]'
+Command :: convert '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-cly001.jpeg[0]' -auto-orient -resize "100x100" '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/9ce459d8518efe50afb30f0dfad9515a20160429-61362-1k84mem'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/vy/sph_7_1n5ybccchwm4w9gs0m0000gn/T/1f3870be274f6c49b3e31a0c6728957f20160429-61362-1yvnpqh.jpeg'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "listings" ("name", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "red apple"], ["description", ""], ["image_file_name", "apple.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 4272], ["image_updated_at", "2016-04-29 10:59:17.593107"], ["created_at", "2016-04-29 10:59:17.709522"], ["updated_at", "2016-04-29 10:59:17.709522"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/listings/14
+Completed 302 Found in 139ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/listings/14" for ::1 at 2016-04-29 11:59:17 +0100
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered listings/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:59:19 +0100
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.1ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/listings/new" for ::1 at 2016-04-29 11:59:23 +0100
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (2.0ms)
+  Rendered listings/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listings" for ::1 at 2016-04-29 11:59:29 +0100
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9usIEO55WP/sSCSayCm4IYIZqyP/T25hBr0Yl5LRUPwDzwTY5JKII1Us9bqvLGKf6PtOxO4Kj+0H3eWLTHzmJQ==", "listing"=>{"name"=>"def", "description"=>"", "price"=>""}, "commit"=>"Create Listing"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "listings" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "def"], ["description", ""], ["created_at", "2016-04-29 10:59:29.380448"], ["updated_at", "2016-04-29 10:59:29.380448"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/listings/15
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/listings/15" for ::1 at 2016-04-29 11:59:29 +0100
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered listings/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-29 11:59:30 +0100
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/listings/15" for ::1 at 2016-04-29 11:59:35 +0100
+Processing by ListingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XOG/iRrLSCydna79Q06AL5b4YKrkcXTtMtZWzg7+A7+pxbNBECCY8CT5f90kS1qR/BqFTfU0lWEztqvS0FO1Zg==", "id"=>"15"}
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "listings" WHERE "listings"."id" = ?  [["id", 15]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/listings
+Completed 302 Found in 12ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/listings" for ::1 at 2016-04-29 11:59:35 +0100
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.2ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.2ms)
