@@ -1,0 +1,14 @@
+development:
+  bucket: 'elasticbeanstalk-eu-west-1-889551932892'
+  access_key_id: 'AKIAIXDPAI6CF4OOACAQ'
+  secret_access_key: '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'
+
+test:
+  bucket: 'elasticbeanstalk-eu-west-1-889551932892'
+  access_key_id: 'AKIAIXDPAI6CF4OOACAQ'
+  secret_access_key: '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'
+
+production:
+  bucket: 'elasticbeanstalk-eu-west-1-889551932892'
+  access_key_id: 'AKIAIXDPAI6CF4OOACAQ'
+  secret_access_key: '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'

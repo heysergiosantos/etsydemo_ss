@@ -44,5 +44,4 @@ Rails.application.configure do
     :bucket => 'elasticbeanstalk-eu-west-1-889551932892'
   }
 
-
 end

@@ -42,7 +42,8 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
-    :bucket => 'elasticbeanstalk-eu-west-1-889551932892'
+    :bucket => 'elasticbeanstalk-eu-west-1-889551932892',
+    :s3_credentials => "#{Rails.root}/config/s3.yml"
   }
   
 end
