@@ -47,5 +47,7 @@ Rails.application.configure do
     :url => ':s3_domain_url',
     :path => '/:class/:attachment/:id_partition/:style/:filename'
   }
+
+  config.action_mailer.default_url_options = { host: 'etsydemo-ss-env.eu-west-1.elasticbeanstalk.com', port: 3000 }
   
 end

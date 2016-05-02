@@ -85,4 +85,7 @@ Rails.application.configure do
     :path => '/:class/:attachment/:id_partition/:style/:filename'
   }
 
+  # Required for Devise gem
+  config.action_mailer.default_url_options = { host: 'etsydemo-ss-env.eu-west-1.elasticbeanstalk.com', port: 3000 }
+
 end
