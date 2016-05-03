@@ -1,3 +1,7 @@
+<div class="jumbotron">
+  <h1>Handcrafted items from around the world</h2>
+  <h2>Discover one-of-a-kind items</h2>
+</div>
 <div class="center">
 
 <h1>Listings</h1>
@@ -11,14 +15,17 @@
           <p><%= number_to_currency(listing.price) %></p>
           <p><%= "Sold by #{listing.user.name}" %></p>
           <%= link_to 'Show', listing, class: "btn btn-link" %>
-          <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
-          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+          <% if (user_signed_in?) && (current_user == listing.user) %>
+            <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+          <% end %>
         </div> 
       </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to 'New Listing', new_listing_path %>
-
+<% if (user_signed_in?) %>
+  <%= link_to 'New Listing', new_listing_path %>
+<% end %>
 </div>

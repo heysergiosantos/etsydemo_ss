@@ -43,3 +43,11 @@ body {
 		font-size: 18px;
 	}
 }
+
+.jumbotron {
+	background-image: asset_url('background.jpg');
+	h1, h2 {
+		color: white;
+		font-family: guardian-egyptt, georgia, serif;
+	}
+}
